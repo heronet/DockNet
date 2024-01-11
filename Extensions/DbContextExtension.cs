@@ -7,8 +7,8 @@ public static class DbContextExtension
 {
     public static IServiceCollection AddDbContext(this IServiceCollection services)
     {
-        // var uriString = Environment.GetEnvironmentVariable("DATABASE_URL");
-        var uriString = "postgres://sirat:secret@localhost:5432/sustapi";
+        var uriString = Environment.GetEnvironmentVariable("DATABASE_URL");
+        // var uriString = "postgres://sirat:secret@localhost:5432/sustapi";
         var uri = new Uri(uriString);
         var db = uri.AbsolutePath.Trim('/');
         var user = uri.UserInfo.Split(':')[0];
